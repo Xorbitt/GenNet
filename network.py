@@ -1,7 +1,6 @@
 from lin import Lin
 from sigmoid import Sigmoid
 from mse import Mse
-import matplotlib.pyplot as plt
 
 class Network:
 
@@ -16,9 +15,8 @@ class Network:
         self.loss = Mse()
         self.predictions = None
     
-    def __call__(self, x, target):
+    def __call__(self, input, target):
         for layer in self.layers:
-            x = layer(x)
+            input = layer(input)
 
-        self.predictions = x
-        return self.loss(x, target)
+        return self.loss(input, target), 
