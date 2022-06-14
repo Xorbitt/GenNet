@@ -95,4 +95,5 @@ class Genetic:
     def testPredict(self, input, target):
         bestConf = self.population[0]
         net = Network(bestConf[0])
-        print("[Test error]: ", net(input, target))
+        print("[Test error]: ", net(input, target)[0])
+        

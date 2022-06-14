@@ -13,10 +13,9 @@ class Network:
 
         self.layers.append(Lin(weights[-1][0], weights[-1][1]))
         self.loss = Mse()
-        self.predictions = None
     
-    def __call__(self, input, target):
+    def __call__(self, inputToLayer, target):
         for layer in self.layers:
-            input = layer(input)
+            inputToLayer = layer(inputToLayer)
 
-        return self.loss(input, target), 
+        return self.loss(input, target), inputToLayer
