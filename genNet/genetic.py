@@ -11,6 +11,9 @@ class Genetic:
         self.population = list()
     
     def fit(self, input, target):
+        """
+        Backward pass implemented using genetic algorithm
+        """
         for i in range(1, self.iter+1):
             helpPopulation = list()
             helpPopulation = self.population[:self.elitism]

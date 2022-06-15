@@ -15,6 +15,9 @@ class Network:
         self.loss = Mse()
     
     def __call__(self, inputToLayer, target):
+        """
+        Forward pass
+        """
         for layer in self.layers:
             inputToLayer = layer(inputToLayer)
 
