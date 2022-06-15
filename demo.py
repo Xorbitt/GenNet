@@ -26,14 +26,14 @@ def readingData(file):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--train', required=True)
-    parser.add_argument('--test', required=True)
-    parser.add_argument('--nn', required=True)
-    parser.add_argument('--popsize', required=True, type=int)
-    parser.add_argument('--elitism', required=True, type=int)
-    parser.add_argument('--p', required=True, type=float)
-    parser.add_argument('--K', required=True, type=float)
-    parser.add_argument('--iter', required=True, type=int)
+    parser.add_argument('--train', required=True, help="Train data path")
+    parser.add_argument('--test', required=True, help="Test data path")
+    parser.add_argument('--nn', required=True, help="Neural network configuration")
+    parser.add_argument('--popsize', required=True, type=int, help="Population size")
+    parser.add_argument('--elitism', required=True, type=int, help="Elitism (number of best instances to keep)")
+    parser.add_argument('--p', required=True, type=float, help="Mutation probability")
+    parser.add_argument('--K', required=True, type=float, help="Standard deviation for Gaussian noise")
+    parser.add_argument('--iter', required=True, type=int, help="Number of iterations")
 
     args = parser.parse_args()
     neuronNumber = [int(x) for x in re.findall('[0-9]+', args.nn)]
